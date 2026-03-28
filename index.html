@@ -267,7 +267,10 @@
                 p.strokeWeight(2);
                 p.beginShape();
                 baseShape.forEach(pt => {
-                    p.vertex(pt.x, pt.y);
+                    // applied translation: new_x = x + tx, new_y = y + ty
+                    let newX = pt.x + tx;
+                    let newY = pt.y + ty;
+                    p.vertex(newX, newY);
                 });
                 p.endShape(p.CLOSE);
             };
