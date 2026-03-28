@@ -421,7 +421,11 @@
                 p.strokeWeight(2);
                 p.beginShape();
                 baseShape.forEach(pt => {
-                    p.vertex(pt.x, pt.y);
+                    // flipped the sign of x for y-axis reflection
+                    // flipped the sign of y for x-axis reflection
+                    let rx = refY ? -pt.x : pt.x;
+                    let ry = refX ? -pt.y : pt.y;
+                    p.vertex(rx, ry);
                 });
                 p.endShape(p.CLOSE);
             };
