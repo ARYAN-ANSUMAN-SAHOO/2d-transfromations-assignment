@@ -417,7 +417,9 @@
                 p.strokeWeight(2);
                 p.beginShape();
                 baseShape.forEach(pt => {
-                    p.vertex(pt.x, pt.y);
+                    let rx = refY ? -pt.x : pt.x;
+                    let ry = refX ? -pt.y : pt.y;
+                    p.vertex(rx, ry);
                 });
                 p.endShape(p.CLOSE);
             };
