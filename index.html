@@ -343,7 +343,8 @@
                 p.strokeWeight(2);
                 p.beginShape();
                 baseShape.forEach(pt => {
-                    p.vertex(pt.x, pt.y);
+                    // scaled each coordinate by the respective factor
+                    p.vertex(pt.x * sx, pt.y * sy);
                 });
                 p.endShape(p.CLOSE);
             };
